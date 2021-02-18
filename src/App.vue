@@ -1,32 +1,86 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+    <div class="header">
+      <img class="img" src="./assets/logo.png">
+      <p class="title">CMSを触る会</p>
     </div>
-    <router-view/>
+    <div class="content">
+      <router-view></router-view>
+    </div>
+    <div class="footer">
+      <h2>CMSを触る会 Co., Ltd.</h2>
+      <ul>
+        <li><a href="" target="_blank">TOP</a></li>
+        <li><router-link to="/">記事一覧</router-link></li>
+        <li><router-link to="/profile">プロフィール</router-link></li>
+      </ul>
+    </div>
   </div>
 </template>
 
+<script>
+export default {
+  name: 'app'
+}
+</script>
+
 <style lang="scss">
+html {
+  height: 100%;
+}
+body{
+  height: 100%;
+  margin: 0;
+  background-color: silver;
+  text-align: center;
+}
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
+  display: block;
   color: #2c3e50;
+  background-color: white;
+  width: 80%;
+  margin: 0 auto;
+  min-width: 600px;
+  margin: 0 auto;
+  height: 100%;
 }
-
-#nav {
-  padding: 30px;
-
+.header {
+  display: block;
+  .img {
+    display: inline-block;
+    width: 15%;
+    left: 20%;
+    display: inline-block;
+  }
+  .title{
+    display: inline-block;
+    width: 30%;
+    font-size: 2.5rem;
+    text-shadow: 1px 1px 3px #000;
+  }
+}
+.footer{
+  display: block;
+  position: absolute;
+  bottom: 0%;
+  width: 80%;
+  min-width: 600px;
+  h1, h2 {
+    font-weight: normal;
+  }
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  li {
+    display: inline-block;
+    margin: 0 10px;
+  }
   a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+    color: #42b983;
   }
 }
 </style>
