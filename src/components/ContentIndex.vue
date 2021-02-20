@@ -14,14 +14,12 @@ export default {
   name: "ContentIndex",
   data: function() {
     return {
-      contents: '',
-      content:''
+      contents: ''
     }
   },
   methods: {
     getContentID(content_id) {
       ContentStore.dispatch('keepContentID',content_id)
-      console.log(content_id)
       this.$router.push('/content')
     }
   },
