@@ -7,7 +7,7 @@
   </div>
 </template>
 <script>
-import ContentStore from '../models/ContentStore.js'
+import ContentStore from '../store/ContentStore.js'
 import axios from 'axios'
 
 export default {

@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import ContentStore from '../models/ContentStore.js'
+import ContentStore from '../store/ContentStore.js'
 export default {
   name: "Content",
   data: function(){
