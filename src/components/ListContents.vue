@@ -11,8 +11,8 @@ import ContentStore from '../store/ContentStore.js'
 import axios from 'axios'
 
 export default {
-  name: "ContentIndex",
-  data: function() {
+  name: "ListContents",
+  data() {
     return {
       contents: ''
     }
@@ -37,7 +37,7 @@ export default {
   }
 }
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
 .title{
   font-size: 2.5rem;
   text-shadow: 1px 1px 3px #000;

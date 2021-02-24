@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import ContentIndex from '@/components/ContentIndex'
-import Content from '@/components/Content'
-import Profile from '@/components/Profile'
+import ContentIndex from '@/pages/ContentIndex'
+import Content from '@/pages/Content'
+import Profile from '@/pages/Profile'
 
 Vue.use(Router)
 

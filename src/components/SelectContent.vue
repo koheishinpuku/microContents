@@ -12,8 +12,8 @@
 <script>
 import ContentStore from '../store/ContentStore.js'
 export default {
-  name: "Content",
-  data: function(){
+  name: "SelectContent",
+  data(){
     return{
       contents: '',
       seach_content_id: ''

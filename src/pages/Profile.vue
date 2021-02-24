@@ -28,7 +28,7 @@ import axios from 'axios'
 
 export default {
   name: "Profile",
-  data: function() {
+  data() {
     return {
       profiles: '',
     }
@@ -46,7 +46,7 @@ export default {
   }
 }
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
 .title{
   font-size: 2.5rem;
   text-shadow: 1px 1px 3px #000;
