@@ -1,66 +1,16 @@
 <template>
   <div>
-    <h2 class="title">プロフィール</h2>
-    <div v-for="profile in profiles" v-bind:key="profile.id">
-      <img class="profile_img" v-bind:src="profile.picture.url" alt="プロフィール写真">
-      <table>
-        <tr>
-          <th>名前</th>
-          <td>{{ profile.name }}</td>
-        </tr>
-
-        <tr>
-          <th>年齢</th>
-          <td>{{ profile.age }}</td>
-        </tr>
-
-        <tr>
-          <th>経歴</th>
-          <td v-html="profile.carrier"></td>
-        </tr>
-      </table>
-    </div>
+    <SelectProfile></SelectProfile>
   </div>
 </template>
 
 <script>
-import axios from 'axios'
+import SelectProfile from '../components/SelectProfile.vue'
 
 export default {
   name: "Profile",
-  data() {
-    return {
-      profiles: '',
-    }
-  },
-  created: function() {
-    axios
-    .get('https://pukupuku.microcms.io/api/v1/profile', {
-      headers: {
-        'X-API-KEY': 'b151d8de-dbdd-40b4-91a9-9cfc68857a56'
-      }
-    })
-    .then(response => (
-      this.profiles = response.data.contents
-      ))
+  components:{
+    SelectProfile
   }
 }
 </script>
-<style lang="scss" scoped>
-.title{
-  font-size: 2.5rem;
-  text-shadow: 1px 1px 3px #000;
-}
-.profile_img{
-  height: 100px;
-  width: 100px;
-}
-table{
-  margin: auto;
-  th{
-    vertical-align: middle;
-    padding-right: 20px;
-  }
-}
-
-</style>

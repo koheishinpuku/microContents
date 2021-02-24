@@ -8,8 +8,7 @@
 </template>
 <script>
 import ContentStore from '../store/ContentStore.js'
-import axios from 'axios'
-
+import { httpClient } from '../api/ApiRoot.js'
 export default {
   name: "ListContents",
   data() {
@@ -24,16 +23,12 @@ export default {
     }
   },
   created: function(){
-    axios
-      .get('https://pukupuku.microcms.io/api/v1/contents', {
-        headers: {
-          'X-API-KEY': 'b151d8de-dbdd-40b4-91a9-9cfc68857a56'
-        }
-      })
-      .then(response => (
-        this.contents = response.data.contents,
+    let self = this
+    httpClient.get('/contents')
+      .then(function(response){
+        self.contents = response.data.contents
         ContentStore.dispatch('keepContents', response.data.contents)
-      ))
+      })
   }
 }
 </script>
